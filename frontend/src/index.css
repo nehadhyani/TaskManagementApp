@@ -1,0 +1,26 @@
+html, .ma-in {
+  background-color: rgb(73, 121, 121);
+}
+
+.main {
+  background-color: rgb(10, 77, 77);
+  border-radius: 10px;
+}
+
+input.task {
+  background-color: rgb(14, 83, 83);
+  border-radius: 6px;
+  border: 0;
+  color: rgb(138, 170, 170);
+}
+
+input[type=checkbox]:checked + input.strikethrough{
+  text-decoration: line-through;
+}
+
+.filter {
+  border-top: 1px solid rgb(49, 165, 165);
+  padding: 1rem 2.4rem;
+  left: 50%;
+  transform: translate(-50%);
+}
