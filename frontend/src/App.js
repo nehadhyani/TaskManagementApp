@@ -2,7 +2,7 @@ import React from 'react';
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Filter from "./Filter";
-import TaskList from "./TaskList";
+import Tasks from "./Tasks";
 import AddTask from "./AddTask";
 
 const App = () => {
@@ -37,12 +37,20 @@ const App = () => {
   return (
     <div className="container-fluid my-5">
       <div className="ma-in row">
-        <div className="col-8 mx-auto text-white shadow-lg p-0">
+        <div className="col-sm-8 col-11 mx-auto text-white shadow-lg p-0">
           <div className="main p-3 py-5">
-            <h2 className="text-center">Daily Planner</h2>
+            <h2 className="text-center heading">Daily Planner</h2>
             <div className="container-fluid">
               <AddTask onChange={refreshTask}/>
-              <TaskList filter={filter} tasks={tasks} onChange={refreshTask}/>
+              <div className="container-fluid">
+                <ul className="list-unstyled row">
+                {
+                  tasks.map((task, i) => (
+                    <Tasks filter={filter} task={task} i={i} onChange={refreshTask}/>)
+                  )
+                }
+                </ul>
+              </div>
             </div>
             <Filter filter={filter} onChange={changeFilter}/>
           </div>

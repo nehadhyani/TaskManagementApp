@@ -25,7 +25,7 @@ app.post("/tasks", async (req,res)=>{
     const tasks = await task.find({});
     res.send(tasks);
   } catch (err) {
-    res.send({msg: "Error getting the tasks"})
+    res.send("error");
   }
 });
 
@@ -42,7 +42,7 @@ app.post("/add", async (req,res)=>{
     const tasks = await task.find({});
     res.send(tasks);
   } catch (err) {
-    res.json({ msg:err.message });
+    res.send("error");
   }
 });
 
@@ -60,7 +60,7 @@ app.post("/updateTask", async (req,res)=>{
     const tasks = await task.find({});
     res.send(tasks);
   } catch (err) {
-    res.json({ msg: "Error Updating the task" });
+    res.send("error");
   }
 });
 
@@ -78,7 +78,7 @@ app.post("/updateDone", async (req,res)=>{
     const tasks = await task.find({});
     res.send(tasks);
   } catch (err) {
-    res.json({ msg: "Error Updating the task" });
+    res.send("error");
   }
 });
 
@@ -90,12 +90,8 @@ app.post("/delete", async (req,res)=>{
     const tasks = await task.find({});
     res.send(tasks);
   } catch (err) {
-    res.json({ msg: "Error Deleting the task" });
+    res.send("error");
   }
-});
-
-app.get("/", (req,res)=>{
-  res.send("Hiiiii");
 });
 
 const URI = process.env.MONGO_URI2
@@ -112,50 +108,6 @@ app.listen(8000,(err)=>{
     console.log("Error in starting server");
   }
   else{
-    console.log("Server is running on port 8000")
+    console.log("Server is running on port 8000");
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// app.post("/name",(req,res)=>{
-//   // console.log("first: "+req.body.data["1"]+"\nsecond: "+req.body.data["2"]);
-//   // console.log(req.body.data["new"])
-//   console.log("JSON:")
-//   console.log(req.body.data)
-//   console.log("JS Object:")
-//   console.log(JSON.parse(req.body.data))
-//   console.log("Array:")
-//   console.log(req.body.dataArray)
-//   let newData = {
-//     "11":"oneOne",
-//     "22":"twoTwo",
-//     "neww": {
-//       "why":":(",
-//       "what":"-_-",
-//       "when":"www",
-//       "how":"h??"
-//     },
-//     "last":"done"
-//   }
-//   res.send(newData);
-// });

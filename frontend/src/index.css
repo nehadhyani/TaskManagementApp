@@ -1,26 +1,76 @@
-html, .ma-in {
-  background-color: rgb(73, 121, 121);
+html,
+.ma-in {
+  background-color: rgb(111, 187, 187);
 }
 
 .main {
-  background-color: rgb(10, 77, 77);
+  background-color: rgb(51, 57, 58);
   border-radius: 10px;
 }
 
-input.task {
-  background-color: rgb(14, 83, 83);
-  border-radius: 6px;
-  border: 0;
-  color: rgb(138, 170, 170);
+.heading,
+textarea.task,
+Button.buttonStyle,
+Button.addButton {
+  color: rgb(118, 204, 200);
 }
 
-input[type=checkbox]:checked + input.strikethrough{
+textarea.task {
+  background-color: rgb(60, 70, 70);
+  border-radius: 6px;
+  border: 0;
+  padding-left: 14px;
+  padding-right: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+Button.buttonStyle,
+Button.addButton,
+Button.buttonStyle:hover {
+  border: none;
+  background: transparent;
+}
+
+Button.addButton:hover {
+  background: rgb(60, 70, 70);
+}
+
+textarea::-webkit-scrollbar {
+  width: 0.2em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(104, 108, 109);
+  border-radius: 20%;
+}
+
+label.filterbtn {
+  color: silver;
+  border: 0;
+  background: transparent;
+}
+
+label.filterbtn:hover {
+  color: silver;
+  border: 0;
+  background: rgb(60, 70, 70);
+}
+
+input[type=radio]:checked + label.filterbtn {
+  border: 0;
+  background: rgb(71, 95, 95);
+}
+
+input[type=checkbox]:checked + textarea.strikethrough {
   text-decoration: line-through;
 }
 
 .filter {
-  border-top: 1px solid rgb(49, 165, 165);
-  padding: 1rem 2.4rem;
-  left: 50%;
-  transform: translate(-50%);
+  padding: 1rem 0;
+}
+
+.line {
+  border-top: 1px solid rgb(118, 204, 200);
+  margin: auto;
 }

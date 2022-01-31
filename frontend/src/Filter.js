@@ -4,33 +4,31 @@ import { ButtonGroup, ToggleButton } from "react-bootstrap";
 
 const Filter = (props) => {
   const filters = ['All', 'Active', 'Completed'];
-  const btnStyle = {
-    color: 'silver',
-    border: 0
-  }
   const radioChange = (e) => {
     props.onChange(e.currentTarget.value);
   }
   return (
-    <div>
-      <ButtonGroup className="me-2 filter">
-      {
-        filters.map((filter) => (<>
-          <ToggleButton
-            style={btnStyle}
-            variant="outline-success"
-            id={filter}
-            type="radio"
-            name="radio"
-            value={filter}
-            checked={props.filter === filter}
-            onChange={radioChange}
-          >
-            {filter}
-          </ToggleButton>
-        </>))
-      }
-      </ButtonGroup>
+    <div className="container line col-7">
+      <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 filter justify-content-center">
+        {
+          filters.map((filter) => (<>
+            <div className="col px-0 text-center">
+              <ToggleButton
+                variant="outline-secondary"
+                className="btn filterbtn"
+                id={filter}
+                type="radio"
+                name="radio"
+                value={filter}
+                checked={props.filter === filter}
+                onChange={radioChange}
+              >
+                {filter}
+              </ToggleButton>
+            </div>
+          </>))
+        }
+      </div>
     </div>
   );
 }
