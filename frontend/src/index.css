@@ -8,6 +8,11 @@ html,
   border-radius: 10px;
 }
 
+input.newTask, input.newTask:focus {
+  background: transparent;
+  color: silver;
+}
+
 .heading,
 textarea.task,
 Button.buttonStyle,
